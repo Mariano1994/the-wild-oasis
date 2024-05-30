@@ -1,5 +1,5 @@
-import Logo from "./components/Logo";
-import NavigationMenu from "./components/NavigationMenu";
+import Logo from "./_components/Logo";
+import NavigationMenu from "./_components/NavigationMenu";
 
 export const metadata = {
   title: "The Wild Oasis",

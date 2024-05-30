@@ -1,23 +1,9 @@
-import Counter from "../components/Counter";
+import Counter from "../_components/Counter";
 
-export default async function Page() {
-  const todosData = await fetch("https://jsonplaceholder.typicode.com/todos");
-
-  const Todos = await todosData.json();
-
+export default function Page() {
   return (
     <div>
       <h1>Cabins Page</h1>
-      <ul>
-        {Todos.map((todo) => (
-          <li key={todo.id}>
-            <span className=" font-bold">Task </span> {[todo.title]} / status:{" "}
-            {todo.completed ? "Completed" : "Incompleted"}
-          </li>
-        ))}
-      </ul>
-
-      <Counter todos={Todos} />
     </div>
   );
 }
