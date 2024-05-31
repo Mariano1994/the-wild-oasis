@@ -1,3 +1,4 @@
+import Header from "./_components/Header";
 import Logo from "./_components/Logo";
 import NavigationMenu from "./_components/NavigationMenu";
 
@@ -22,14 +23,12 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="eng">
       <body
-        className={`${josefinFont.className} bg-primary-950 text-primary-100 min-h-screen`}
+        className={`${josefinFont.className} antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col relative`}
       >
-        <header>
-          <Logo />
-        </header>
-        <NavigationMenu />
-        <main>{children}</main>
-        <footer> Copyright by the Wild Oasis</footer>
+        <Header />
+        <div className=" flex-1 px-8 py-12 ">
+          <main className="max-w-7xl mx-auto">{children}</main>
+        </div>
       </body>
     </html>
   );
