@@ -1,6 +1,4 @@
 import Header from "./_components/Header";
-import Logo from "./_components/Logo";
-import NavigationMenu from "./_components/NavigationMenu";
 
 import "@/app/_styles/globals.css";
 
