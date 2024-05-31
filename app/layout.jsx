@@ -2,6 +2,7 @@ import Header from "./_components/Header";
 
 import "@/app/_styles/globals.css";
 
+// GETTIING FONT FROM GOOGLE FONTS
 import { Josefin_Sans } from "next/font/google";
 const josefinFont = Josefin_Sans({
   subsets: ["latin"],
