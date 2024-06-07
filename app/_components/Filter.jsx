@@ -7,6 +7,7 @@ function Filter() {
   const serachParams = useSearchParams();
   const router = useRouter();
   const parhName = usePathname();
+  const activeFilter = serachParams.get("capacity") ?? "all";
 
   const handleFilter = (filterOption) => {
     const params = new URLSearchParams(serachParams);
@@ -15,42 +16,56 @@ function Filter() {
   };
   return (
     <div className=" border border-primary-800 flex">
-      <button
-        className=" px-5 py-2 hover:bg-primary-700
-      "
-        onClick={() => handleFilter("all")}
+      <Button
+        filter="all"
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
       >
         {" "}
         All cabins
-      </button>
+      </Button>
 
-      <button
-        className=" px-5 py-2 hover:bg-primary-700
-      "
-        onClick={() => handleFilter("small")}
+      <Button
+        filter="small"
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
       >
         {" "}
-        1&mdash;3 guests
-      </button>
+        2&mdash;3 guests
+      </Button>
 
-      <button
-        className=" px-5 py-2 hover:bg-primary-700
-      "
-        onClick={() => handleFilter("medium")}
+      <Button
+        filter="medium"
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
       >
         {" "}
         4&mdash;7 guests
-      </button>
+      </Button>
 
-      <button
-        className=" px-5 py-2 hover:bg-primary-700
-      "
-        onClick={() => handleFilter("large")}
+      <Button
+        filter="large"
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
       >
         {" "}
         8&mdash;12 guests
-      </button>
+      </Button>
     </div>
+  );
+}
+
+function Button({ filter, handleFilter, activeFilter, children }) {
+  return (
+    <button
+      className={`px-5 py-2 hover:bg-primary-700 ${
+        activeFilter === filter ? "bg-primary-700 text-primary-50" : ""
+      }`}
+      onClick={() => handleFilter(filter)}
+    >
+      {" "}
+      {children}
+    </button>
   );
 }
 
