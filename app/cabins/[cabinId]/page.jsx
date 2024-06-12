@@ -1,9 +1,10 @@
-import DateSelector from "@/app/_components/DateSelector";
-import ReservationForm from "@/app/_components/ReservationForm";
+import Resevation from "@/app/_components/Resevation";
+import Spinner from "@/app/_components/Spinner";
 import TextExpander from "@/app/_components/TextExpander";
 import { getCabin, getCabins } from "@/app/_libs/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export async function generateMetadata({ params }) {
   const { name } = await getCabin(params.cabinId);
@@ -19,6 +20,7 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }) {
   const cabin = await getCabin(params.cabinId);
+
   const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
 
@@ -67,11 +69,9 @@ export default async function Page({ params }) {
         <h2 className="text-5xl font-semibold text-center text-accent-400">
           Reserve cabin {name} today. Pay on arrival.
         </h2>
-
-        <div className=" grid grid-cols-2 border border-primary-800 min-h-[400px] mt-8">
-          <DateSelector />
-          <ReservationForm />
-        </div>
+        <Suspense fallback={<Spinner />}>
+          <Resevation cabin={cabin} />
+        </Suspense>
       </div>
     </div>
   );
