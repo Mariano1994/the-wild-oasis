@@ -1,6 +1,6 @@
 import Image from "next/image";
-import aboutImage1 from "@/public/about-1.jpg";
-import aboutImage2 from "@/public/about-2.jpg";
+import aboutImage1 from "../../public/about-1.jpg";
+import aboutImage2 from "../../public/about-2.jpg";
 import Link from "next/link";
 
 export const metadata = {

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import bgImage from "@/public/bg.png";
+
+import bgImage from "../public/bg.png";
 import Link from "next/link";
 
 const Home = () => {

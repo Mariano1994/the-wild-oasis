@@ -1,9 +1,10 @@
 import Header from "./_components/Header";
 
-import "@/app/_styles/globals.css";
+import "../app/_styles/globals.css";
 
 // GETTIING FONT FROM GOOGLE FONTS
 import { Josefin_Sans } from "next/font/google";
+import { ReservationContextProvider } from "./_context/ReservationContext";
 const josefinFont = Josefin_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -26,7 +27,9 @@ const RootLayout = ({ children }) => {
       >
         <Header />
         <div className=" flex-1 px-8 py-12 grid ">
-          <main className="max-w-7xl mx-auto w-full">{children}</main>
+          <ReservationContextProvider>
+            <main className="max-w-7xl mx-auto w-full">{children}</main>
+          </ReservationContextProvider>
         </div>
       </body>
     </html>

@@ -1,7 +1,8 @@
-import Resevation from "@/app/_components/Resevation";
-import Spinner from "@/app/_components/Spinner";
-import TextExpander from "@/app/_components/TextExpander";
-import { getCabin, getCabins } from "@/app/_libs/data-service";
+// import Resevation from "@/app/_components/Resevation";
+import Resevation from "../../_components/Resevation";
+import Spinner from "../../_components/Spinner";
+import TextExpander from "../../_components/TextExpander";
+import { getCabin, getCabins } from "../../_libs/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { Suspense } from "react";
